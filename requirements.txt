@@ -1,0 +1,12 @@
+asgiref==3.7.2
+certifi==2023.7.22
+cffi==1.15.1
+Django==4.2.6
+docutils @ file:///private/tmp/docutils-20230831-6109-1yofpc0/docutils-0.20.1
+GDAL==3.7.2
+gpg==1.22.0
+numpy==1.26.1
+protobuf==4.24.4
+pycparser @ file:///private/tmp/pycparser-20230831-6050-10bkury/pycparser-2.21
+six==1.16.0
+sqlparse==0.4.4
