@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class LimeningsConfig(AppConfig):
+class LimenlingsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'limenings'
+    name = 'limenlings'
