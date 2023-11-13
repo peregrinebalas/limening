@@ -6,7 +6,7 @@ Django==4.2.6
 docutils==0.20.1
 filelock==3.12.4
 GDAL==3.7.2
-gpg==1.22.0
+gpg==1.10.0
 numpy==1.26.1
 pipenv==2023.10.20
 platformdirs==3.11.0

@@ -16,7 +16,7 @@ class Limenling(models.Model):
 
     name = models.CharField(max_length=32)
     clade = models.ForeignKey(Clade)
-    nlp_model = models.ForeignKey(NlpModel)
+    # nlp_model = models.ForeignKey(NlpModel)
     max_speed = models.BigIntegerField
     vert = models.CharField(max_length=1, choices=VERT_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -27,10 +27,9 @@ class Limenling(models.Model):
 
 class Clade(models.Model):
     name = models.CharField(max_length=32)
-    # sapience = models.
+    # sapience = models.CharField()
 
     def __str__(self):
         return self.name
 
-class NlpModel(models.Model):
-    
+# class NlpModel(models.Model):
