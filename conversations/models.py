@@ -10,13 +10,11 @@ class Message(models.Model):
     content = models.CharField
     created = models.DateTimeField(auto_now_add=True)
 
-class LimenlingMessage(models.Model):
+class LimlingMessage(models.Model):
     message = models.ForeignKey(Message)
-    limenling = models.ForeignKey(Limenling)
+    limenling = models.ForeignKey(Limling)
     is_response = models.BooleanField
 
 class UserMessage(models.Model):
     message = models.ForeignKey(Message)
     user = models.ForeignKey(User)
-
-
