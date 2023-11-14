@@ -19,7 +19,7 @@ class Limenling(models.Model):
     max_speed = models.BigIntegerField
     vert = models.CharField(max_length=1, choices=VERT_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
