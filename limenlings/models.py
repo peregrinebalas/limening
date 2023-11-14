@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Limenling(models.Model):
     OMNIVERT = "O"
     AMBIVERT = "A"
