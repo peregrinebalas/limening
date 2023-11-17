@@ -1,4 +1,6 @@
 from django.db import models
+from limening import Limling
+from users import User
 
 # Create your models here.
 class Conversation(models.Model):
@@ -10,9 +12,12 @@ class Message(models.Model):
     content = models.CharField
     created = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.content
+
 class LimlingMessage(models.Model):
     message = models.ForeignKey(Message)
-    limenling = models.ForeignKey(Limling)
+    limling = models.ForeignKey(Limling)
     is_response = models.BooleanField
 
 class UserMessage(models.Model):

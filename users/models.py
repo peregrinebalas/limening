@@ -6,3 +6,6 @@ class User(models.Model):
     first_name = models.CharField
     last_name = models.CharField
     dob = models.DateField
+
+    def __str__(self):
+        return self.username
