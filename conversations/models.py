@@ -1,5 +1,5 @@
 from django.db import models
-from limening import Limling
+from limening import Animi
 from users import User
 
 # Create your models here.
@@ -15,10 +15,11 @@ class Message(models.Model):
     def __str__(self):
         return self.content
 
-class LimlingMessage(models.Model):
+class AnimiMessage(models.Model):
     message = models.ForeignKey(Message)
-    limling = models.ForeignKey(Limling)
+    animi = models.ForeignKey(Animi)
     is_response = models.BooleanField
+    confidence_score = models.FloatField(max=1.0, min=0.0)
 
 class UserMessage(models.Model):
     message = models.ForeignKey(Message)
