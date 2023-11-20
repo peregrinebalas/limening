@@ -12,6 +12,9 @@ class Clade(models.Model):
     def __str__(self):
         return self.name
 
+# Animi personality fields:
+# vert - how outgoing the animi is. visible to user.
+# psyche projection - if the animi will take previous experiences from other users and approach a new user as though they will behave the same way. no visible to users.
 class Animi(models.Model):
     OMNIVERT = "O"
     AMBIVERT = "A"
