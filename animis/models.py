@@ -32,6 +32,7 @@ class Animi(models.Model):
     nlp_model = models.ForeignKey(NlpModel)
     max_speed = models.BigIntegerField
     vert = models.CharField(max_length=1, choices=VERT_CHOICES)
+    projection = models.BooleanField
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
