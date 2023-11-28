@@ -28,16 +28,16 @@ class Portal(models.Model):
         return Portal.objects.annotate(distance=Distance('point', point))
 
     @property
-    def animi(self):
-        return self.animi_set.all().order_by('-manifested_at')
+    def entity(self):
+        return self.entity_set.all().order_by('-manifested_at')
 
     def __str__(self):
         return self.name
 
-# Animi personality fields:
-# vert - how outgoing the animi is. visible to user.
-# psyche projection - if the animi will take previous experiences from other users and approach a new user as though they will behave the same way. no visible to users.
-class Animi(models.Model):
+# Entity personality fields:
+# vert - how outgoing the entity is. visible to user.
+# psyche projection - if the entity will take previous experiences from other users and approach a new user as though they will behave the same way. no visible to users.
+class Entity(models.Model):
     OMNIVERT = "O"
     AMBIVERT = "A"
     INTROVERT = "I"
