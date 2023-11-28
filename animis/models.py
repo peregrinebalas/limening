@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.gis.geos import Point
+from django.contrib.gis.db.models.functions import Distance
 
 # Create your models here.
 class NlpModel(models.Model):
@@ -8,6 +10,26 @@ class NlpModel(models.Model):
 class Clade(models.Model):
     name = models.CharField(max_length=32)
     # sapience = models.CharField()
+
+    def __str__(self):
+        return self.name
+
+class Portal(models.Model):
+    name = models.CharField(max_length=100)
+    lat = models.FloatField()
+    lng = models.FloatField()
+    point = models.PointField(blank = True, null=True, srid=4326)
+
+    def save(self, *args, **kwargs):
+        self.point = Point(self.lng, self.lat)
+        super(Wall, self).save(*args, **kwargs)
+
+    def order_by_dist(point):
+        return Portal.objects.annotate(distance=Distance('point', point))
+
+    @property
+    def animi(self):
+        return self.animi_set.all().order_by('-manifested_at')
 
     def __str__(self):
         return self.name
@@ -35,6 +57,9 @@ class Animi(models.Model):
     projection = models.BooleanField
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    manifested_at = models.DateTimeField
+    portal = models.ForeignKey(Portal)
 
     def __str__(self):
         return self.name
+
