@@ -1,6 +1,6 @@
 from django.db import models
 from limening import Entity
-from users import User
+from django.contrib.auth import User
 
 # Create your models here.
 class Conversation(models.Model):
