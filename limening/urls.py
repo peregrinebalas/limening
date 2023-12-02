@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from limening.users import views
+from users import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)

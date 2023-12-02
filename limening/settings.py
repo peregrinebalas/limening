@@ -14,8 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+GDAL_LIBRARY_PATH="/opt/homebrew/Cellar/gdal/3.8.1_1/lib/libgdal.34.3.8.1.dylib"
+GEOS_LIBRARY_PATH="/opt/homebrew/Cellar/geos/3.12.1/lib/libgeos_c.1.18.1.dylib"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -37,10 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'rest_framework',
-    conversations.apps.ConversationsConfig,
-    entities.apps.EntitiesConfig,
-    users.apps.UsersConfig
 ]
 
 MIDDLEWARE = [
