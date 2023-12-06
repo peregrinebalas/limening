@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models.functions import Distance
 
-
 class NlpModel(models.Model):
     source = models.CharField
     model_version = models.CharField
